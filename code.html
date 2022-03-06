@@ -103,9 +103,43 @@
                 </pre>
             </div>
             <div class="col-lg-4">
-                <p>The Code is structured in one function.</p>
-                <h5><code>helloWorld</code></h5>
-                <p><code>helloWorld</code> is a function that logs "Hello world!" in the console. Open up the dev tools with <b>ctrl + shift + j</b> and call the function in the console.</p>
+                <p>The Code is structured in three functions: a <em>controller function</em>, a <em>logic function</em>, and a <em>view function</em>.</p>
+                <h3><code>getValue</code> the <em>Controller Function</em></h3>
+                <p>
+                    <code>getValue</code>'s local variables: 
+                    <ul>
+                        <li><code>userString</code></li>
+                        <li><code>revString</code></li>
+                    </ul>
+                </p>
+                <p><code>getValue</code> is the <em>controller</em> function of this short application. When invoked, it calls upon the <em>logic</em> and <em>view</em> functions to achieve the goal of the coding project: to reverse the user inputed string. This function is attached to <code>#btnSubmit</code> (code not stated in this script), an HTML button element within the App page. Within the App page, there's an internal script that essentially wires <code>getValue</code>'s functionality to the HTML button element as such: <code>document.querySelector("#btnSubmit").addEventListener("click", getValue);</code></p> 
+                <p>The first line of code scoped inside of <code>getValue</code> accesses the <code>classList</code> property (a <em>DOMTokenList</em>) of <code>#alert</code> and calls upon its <code>add</code> method to push a string value (<code>"invisible"</code>) into it. Note that <code>document.querySelector("#alert")</code> references an HTML element which when classed via Bootstrap with <code>"invisible"</code>, it prioritizes a CSS regulation to said element equivalent to <code>visibility: hidden !important</code>.</p>
+                <h5><code>userString</code></h5> 
+                <p>The next line of code declares and initializes <code>userString</code> to the <code>value</code> property of <code>#userString</code> which is referenced by <code>document.querySelector("#userString")</code>. <code>#userString</code> is the HTML textual type input element which takes string input.</p> 
+                <h5><code>revString</code></h5>
+                <p>In the next couple lines of code, <code>revString</code> is declared and initialized to the return value of <code>reverseString</code> passing <code>userString</code> as an argument returning the reversed string then displays it by calling <code>displayString</code> passing <code>revString</code> as the argument in the final line of code of <code>getValue</code>.</p>
+                <h5><code>reverseString</code> <em>the Logic Function</em></h5>
+                <p>
+                    <code>reverseString</code>'s local variables: 
+                    <ul>
+                        <li><code>revString</code></li>    
+                    </ul>
+                    <code>reverseString</code>'s argument list: 
+                    <ul>
+                        <li><code>userString</code></li>
+                    </ul>
+                </p>
+                <p><code>reverseString</code> is the <em>logic</em> function of this short application. When invoked, it takes the declared argument, <code>userString</code>, and initializes it to the value of the string inputed by the user (<code>userString</code> aforementioned in the <em>controller</em> function), and is utilized to manipulate the return value of this function (<code>revString</code>).</p> 
+                <h5><code>revString</code></h5>
+                <p>Before the value of this variable is returned by this (<em>logic</em>) function, it is first declared and initialized to an empty string (<code>""</code>) in the first line of code. It is then manipulated with a for loop to spell out the user inputed string in reverse. The <em>initial expression</em> of the loop declares and initializes variable <code>i</code> to the difference between the <code>length</code> property of <code>userString</code> and <code>1</code>. The <em>condition expression</em> then evaluates whether <code>i</code> is greater than or equivalent to <code>0</code>. If the <em>condition expression</em> returns true, the code block executes appending the last character of <code>userString</code> to the empty string initialized by <code>revString</code> (<code>revString += userString[i]</code>, much like that of an array although strings are not technically arrays). Code scoped by the for loop executes consecutively until its <em>condition</em> expression returns false, then finally, the final line of code returns the value of <code>revString</code> (<code>return revString</code>).</p>
+                <h5><code>displayString</code> the <em>View Function</em></h5>
+                <p>
+                    <code>displayString</code>'s argument list: 
+                    <ul>
+                        <li><code>revString</code></li>
+                    </ul>
+                </p> 
+                <p><code>displayString</code>, the final directive called in the <em>controller</em> function, is the <em>view</em> function of this short application. When invoked, the code blocked scoped within displays a brief message containing the reversed string, <code>revString</code>, the argument passed being the reversed string inserted into the brief message assigned its value by the <code>innerHTML</code> property of <code>#msg</code>. <code>#msg</code> is a paragraph HTML element in which its parent element is <code>#alert</code>, a division HTML element. In the final line of code, <code>#alert</code>'s <code>classList</code> property is accessed and its <code>remove</code> method is called to which in effect removes the element's CSS visibility property.</p>
             </div>
         </div>
     </div>
