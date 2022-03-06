@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>CF Hundo: A Coding Project By Scott Miller via CoderFoundry</title>
+    <title>STRINGREVERSION: A Coding Project By Scott Miller</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +24,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="/img/SM_logomark_dark.PNG" class="d-inline-block align-text-top" alt="Scott Miller Logo Mark" width="30" height="30" /> CF Hundo
+            <img src="/img/SM_logomark_dark.PNG" class="d-inline-block align-text-top" alt="Scott Miller Logo Mark" width="30" height="30" /> STRINGREVERSION
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@
                     <a class="nav-link active" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" target="_blank">Git Repo</a>
+                    <a class="nav-link" href="https://github.com/millertime90/String-Reversion" target="_blank">Git Repo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" target="_blank">About</a>
@@ -54,17 +54,51 @@
 <!-- MAIN SECTION -->
 <main class="flex-shrink-0">
     <div class="container col-xxl-8 py-5 px-4">
-        <h2 class="border-1 border-bottom border-dark mt-5">The code for CF Hundo</h2>
+        <h2 class="border-1 border-bottom border-dark mt-5">The code for <span class="logoFont">STRINGREVERSION</span></h2>
         <div class="row g-5 py-5 row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                 <pre class="line-numbers">
                     <code class="language-javascript">
-                        // Call oralePutos
-                        function helloWorld() {
+                        // Get the string from the page. 
+                        // CONTROLLER FUNCTION 
+                        function getValue() { 
 
-                            console.log("Hello world!"); 
+                            document.querySelector("#alert").classList.add("invisible"); 
+
+                            let userString = document.querySelector("#userString").value; 
+                            let revString = reverseString(userString); 
+                            displayString(revString); 
 
                         }
+
+                        // Reverse the string. 
+                        // LOGIC FUNCTION 
+                        function reverseString(userString) {
+
+                            let revString = ""; 
+
+                            // reverse a string using a for loop 
+                            for(let i = userString.length - 1; i >= 0; i--) {
+
+                                revString += userString[i];   
+
+                            } 
+
+                            return revString; 
+    
+                        }
+
+                        // Display the reversed string to the user. 
+                        // VIEW FUNCTION 
+                        function displayString(revString) {
+
+                            // Write message to the page.
+                            document.querySelector("#msg").innerHTML = `Your string reversed is: ${revString}`; 
+    
+                            // Show the alert box. 
+                            document.querySelector("#alert").classList.remove("invisible"); 
+
+                        } 
                     </code>
                 </pre>
             </div>
@@ -77,7 +111,7 @@
     </div>
 </main>
 <!-- FOOTER SECTION --> 
-<footer class="footer mt-auto py-3 sticky-footer">
+<footer class="footer mt-auto py-3 sticky-footer fixed-bottom">
     <div class="container-fluid">
         <div class="row row-cols-1 row-cols-lg-3 gy-2">
             <div class="col order-last order-lg-first text-light d-flex align-items-center">
@@ -98,7 +132,7 @@
                         </a>
                     </div>
                     <div class="col social">
-                        <a href="#" target="_blank">
+                        <a href="https://github.com/millertime90" target="_blank">
                             <i class="fab fa-github fa-2x"></i>
                         </a>
                     </div>
@@ -123,15 +157,6 @@
         'left-trim': true,
         'right-trim': true
     }); 
-</script>
-<script type="text/javascript">
-
-    function helloWorld() {
-
-        console.log("Hello world!"); 
-
-    }
-
 </script>
 </body>
 </html>

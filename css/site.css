@@ -3,6 +3,7 @@
     --secondary-color: #FF993B; 
     --dark-color: #111111; 
     --white-color: #DFF3E4; 
+    --other-color: #8E0B0B; 
 } 
 
 body {
@@ -26,12 +27,17 @@ footer .social>a {
 
 footer .social>a:hover {
     opacity: 0.9; 
-    color: var(--secondary-color); 
+    color: var(--other-color); 
 } 
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color); 
 } 
+
+.logoFont {
+    color: #000; 
+    font-weight: bold; 
+}
 
 .bsicon {
     color: rgb(185, 116, 185); 
@@ -50,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 } 
 
 .checklist>li i {
-    color: var(--secondary-color); 
+    color: var(--other-color); 
 } 
 
 code[class*="language-"], pre[class*="language-"] {
